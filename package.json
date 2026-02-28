@@ -9,6 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.38.3",
+    "@prisma/client": "^7.4.2",
+    "lucide-react": "^0.575.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
@@ -18,8 +21,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "daisyui": "^5.5.19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "prisma": "^7.4.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -32,7 +32,7 @@ export default function Home() {
     <Wrapper>
       <div>
         {/* You can open the modal using document.getElementById('ID').showModal() method */}
-          <button className="btn" onClick={()=>(document.getElementById('my_modal_3') as HTMLDialogElement).showModal()}>open modal</button>
+          <button className="btn btn-primary mb-6" onClick={()=>(document.getElementById('my_modal_3') as HTMLDialogElement).showModal()}>Nouveau Projet <FolderGit2/></button>
           <dialog id="my_modal_3" className="modal">
             <div className="modal-box">
               <form method="dialog">

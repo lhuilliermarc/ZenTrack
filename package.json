@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.38.3",
+    "@prisma/adapter-better-sqlite3": "^7.4.2",
     "@prisma/client": "^7.4.2",
+    "better-sqlite3": "^12.6.2",
     "lucide-react": "^0.575.0",
     "next": "16.1.6",
     "react": "19.2.3",
@@ -18,6 +20,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

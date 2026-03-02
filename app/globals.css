@@ -1,5 +1,5 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "daisyui" {
-  themes: forest --default, coffee --prefersdark, cupcake;
+  themes: luxury --default, coffee --prefersdark, cupcake;
 }

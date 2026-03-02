@@ -1,7 +1,6 @@
 "use server"
 
 import { prisma } from "@/lib/prisma";
-import { Project } from "@prisma/client";
 import { randomBytes } from "crypto";
 
 export async function checkAndAddUser(email:string, name:string) {
@@ -93,4 +92,18 @@ export async function getProjectsCreatedByUser(email:string) {
         console.error(error)
         throw new Error
     }    
+}
+
+export async function deleteProjectById(projectid:string) {
+    try {
+        await prisma.project.delete({
+            where : {
+                id : projectid
+            }
+        })
+        console.log(`Projet avec l'ID ${projectid} supprimé avec succès.`);
+    } catch (error) {
+        console.error(error)
+        throw new Error
+    }  
 }

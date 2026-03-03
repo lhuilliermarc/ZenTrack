@@ -7,6 +7,7 @@ import { useUser } from "@clerk/nextjs";
 import { toast } from "react-toastify";
 import { Project } from "@/type";
 import ProjectComponent from "./components/ProjectComponent";
+import EmptyState from "./components/EmptyState";
 
 export default function Home() {
 
@@ -104,7 +105,13 @@ export default function Home() {
                 ))}
               </ul>
             ) : (
-              <div></div>
+              <div>
+                <EmptyState
+                  imageSrc="/empty-project.png"
+                  imageAlt="Picture of an empty project"
+                  message="Aucun projet créer"
+                />
+              </div>
             )}
           </div>
       </div>

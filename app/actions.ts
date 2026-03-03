@@ -105,5 +105,43 @@ export async function deleteProjectById(projectid:string) {
     } catch (error) {
         console.error(error)
         throw new Error
-    }  
+    }
+}
+
+export async function addUserToProject(email:string, inviteCode: string) {
+    try {
+        const project = await prisma.project.findUnique({
+            where : {inviteCode}
+        })
+        if(!project) {
+            throw new Error('Projet non trouvé');
+        }
+        const user = await prisma.user.findUnique({
+            where : {email}
+        })
+        if(!user) {
+            throw new Error('Utilisateur non trouvé');
+        }
+        const existingAssociation = await prisma.projectUser.findUnique({
+            where : {
+                userId_projectId : {
+                    userId : user.id,
+                    projectId : project.id
+                }
+            }
+        })
+        if(existingAssociation) {
+            throw new Error('Utilisateur déjà associé à ce projet');
+        }
+        await prisma.projectUser.create({
+            data : {
+                userId : user.id,
+                projectId : project.id
+            }
+        })
+        return 'Utilisateur ajouté avec succès';
+    } catch (error) {
+        console.error(error)
+        throw new Error
+    }
 }
